@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <!-- Meta -->
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <meta
+    name="description"
+    content="Modern Personal Portfolio Website"
+  />
+
+  <title>Minimal Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+
+</head>
+
+<body>
+
+  <!-- Loader -->
+  <div class="loader-wrapper">
+    <div class="loader"></div>
+  </div>
+
+  <!-- Navbar -->
+  <header class="header">
+
+    <nav class="navbar container">
+
+      <a href="#" class="logo">
+        Tanmay<span>.</span>
+      </a>
+
+      <ul class="nav-links">
+
+        <li>
+          <a href="#hero" class="nav-link active">
+            Home
+          </a>
+        </li>
+
+        <li>
+          <a href="#about" class="nav-link">
+            About
+          </a>
+        </li>
+
+        <li>
+          <a href="#skills" class="nav-link">
+            Skills
+          </a>
+        </li>
+
+        <li>
+          <a href="#projects" class="nav-link">
+            Projects
+          </a>
+        </li>
+
+        <li>
+          <a href="#contact" class="nav-link">
+            Contact
+          </a>
+        </li>
+
+      </ul>
+
+      <div class="nav-actions">
+
+        <button class="theme-toggle">
+
+          <i class="fa-solid fa-moon"></i>
+
+        </button>
+
+        <button class="hamburger">
+
+          <span></span>
+          <span></span>
+          <span></span>
+
+        </button>
+
+      </div>
+
+    </nav>
+
+  </header>
+
+  <!-- Dynamic Content -->
+  <main id="main-content"></main>
+
+  <!-- Scroll Top -->
+  <button class="scroll-top">
+
+    <i class="fa-solid fa-arrow-up"></i>
+
+  </button>
+
+  <!-- JS -->
+  <script src="js/script.js"></script>
+  
+  <script>
+
+  const savedTheme =
+    localStorage.getItem("theme");
+
+  if (savedTheme) {
+
+    document.documentElement.setAttribute(
+      "data-theme",
+      savedTheme
+    );
+
+  }
+
+</script>
+
+</body>
+
+</html>
