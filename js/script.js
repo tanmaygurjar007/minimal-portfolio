@@ -93,8 +93,26 @@ function initializeWebsite() {
   if (hamburger && navLinks) {
     hamburger.addEventListener("click", () => {
       navLinks.classList.toggle("active");
+
+      hamburger.classList.toggle("active");
     });
   }
+
+  // =========================
+  // CLOSE MOBILE MENU
+  // =========================
+
+  navItems.forEach((item) => {
+
+    item.addEventListener("click", () => {
+
+      navLinks.classList.remove("active");
+
+      hamburger.classList.remove("active");
+
+    });
+
+  });
 
   // =========================
   // NAVBAR SCROLL EFFECT
@@ -174,6 +192,84 @@ function initializeWebsite() {
 
   window.addEventListener("scroll", revealSections);
   revealSections();
+
+  // =========================
+  // ANIMATE SKILL BARS
+  // =========================
+
+  const skillBars =
+    document.querySelectorAll(
+      ".progress-bar span"
+    );
+
+  function animateSkills() {
+
+    skillBars.forEach((skill, index) => {
+
+      const skillTop =
+        skill.getBoundingClientRect().top;
+
+      if (
+        skillTop < window.innerHeight - 50
+      ) {
+
+      setTimeout(() => {
+
+        skill.style.width =
+          skill.dataset.width;
+
+      }, index * 150);
+
+      }
+
+    });
+
+  }
+
+  window.addEventListener(
+    "scroll",
+    animateSkills
+  );
+
+  animateSkills();
+
+
+  // =========================
+  // HERO GLOW PARALLAX
+  // =========================
+
+  const hero =
+    document.querySelector(".hero");
+
+  const heroGlow =
+    document.querySelector(".hero-glow");
+
+  if (hero && heroGlow) {
+
+    hero.addEventListener(
+      "mousemove",
+      (e) => {
+
+        const rect =
+          hero.getBoundingClientRect();
+
+        const x =
+          e.clientX - rect.left;
+
+        const y =
+          e.clientY - rect.top;
+
+        heroGlow.style.left =
+          `${x}px`;
+
+        heroGlow.style.top =
+          `${y}px`;
+
+      }
+    );
+
+  }
+
 
   // =========================
   // SCROLL TOP BUTTON
